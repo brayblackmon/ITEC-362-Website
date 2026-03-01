@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Locations — Nuclear Energy South Carolina</title>
+
+  <!-- shared stylesheet (keep in same folder) -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- small page-specific tweaks -->
+  <style>
+    .locations-hero{
+      padding:48px 0 18px;
+    }
+    .locations-hero h1{font-size:40px;margin:0 0 12px}
+    .locations-hero p{color:var(--muted);max-width:66ch;margin:0 0 8px}
+
+    .map-wrap{
+      margin-top:26px;
+      margin-bottom:34px;
+      border:6px solid #111;
+      padding:6px;
+      background:#fff;
+      border-radius:6px;
+      box-shadow: 0 6px 18px rgba(17,24,39,0.06);
+    }
+    .map-wrap img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:4px;
+      object-fit:cover;
+    }
+
+    .facilities{
+      padding:8px 0 48px;
+      color:var(--muted);
+    }
+    .facility{
+      margin-bottom:26px;
+    }
+    .facility h3{
+      margin:0 0 6px;
+      color:var(--neutral);
+      font-size:16px;
+    }
+    .facility .county{
+      margin:0 0 8px;
+      font-weight:600;
+      color:#6b7280;
+    }
+    .facility p{ margin:0;color:var(--muted);line-height:1.6; }
+
+    /* make right-side footer nav align similar to figma on wide screens */
+    @media(min-width:900px){
+      .footer-inner{align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
+      </div>
+
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html">About</a>
+        <a href="about.html">Locations</a>
+        <a href="alternatives.html">Impacts</a>
+        <a href="index.html#why-nuclear">Why Nuclear</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn btn-outline" href="#quiz">Take the Quiz</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container locations-hero" aria-labelledby="locations-title">
+      <h1 id="locations-title">Locations</h1>
+      <p>
+        South Carolina is home to several major nuclear facilities that generate electricity and support national
+        energy and security efforts. Below is a list of the state’s primary nuclear energy facilities, their locations
+        by county, and a brief description of each.
+      </p>
+
+      <div class="map-wrap" role="img" aria-label="Map of South Carolina with nuclear facility locations">
+        <!-- Replace this placeholder with the exported map image -->
+        <img src="images/map.jpg" alt="Map of South Carolina showing counties and plant locations" />
+      </div>
+    </section>
+
+    <section class="container facilities" aria-labelledby="facilities-heading">
+      <h2 id="facilities-heading" style="margin-top:0;margin-bottom:18px;color:var(--neutral)">Nuclear Energy Facilities in South Carolina</h2>
+
+      <article class="facility" id="oconee">
+        <h3>Oconee Nuclear Station</h3>
+        <div class="county">Oconee County</div>
+        <p>
+          Oconee Nuclear Station consists of three nuclear reactors and is one of the largest nuclear power plants in the state.
+          Operated by Duke Energy, the facility has been generating electricity since the early 1970s. It provides reliable,
+          carbon-free power to hundreds of thousands of homes across South Carolina and neighboring states.
+        </p>
+      </article>
+
+      <article class="facility" id="catawba">
+        <h3>Catawba Nuclear Station</h3>
+        <div class="county">York County</div>
+        <p>
+          The Catawba Nuclear Station has two reactors and is jointly operated by Duke Energy and North Carolina utilities.
+          Located along the Catawba River, the plant uses water from the river for cooling purposes. It is a major contributor
+          to the region’s electricity supply and plays a key role in grid reliability.
+        </p>
+      </article>
+
+      <article class="facility" id="summer">
+        <h3>Virgil C. Summer Nuclear Station</h3>
+        <div class="county">Fairfield County</div>
+        <p>
+          This facility contains one operating reactor that supplies a significant portion of South Carolina’s electricity.
+          Operated by Dominion Energy South Carolina, the plant is located along the Broad River and includes a large cooling
+          tower visible from surrounding areas. The site previously began construction on additional reactors; those projects
+          were later discontinued.
+        </p>
+      </article>
+
+      <article class="facility" id="srs">
+        <h3>Savannah River Site (SRS)</h3>
+        <div class="county">Aiken, Barnwell, and Allendale Counties</div>
+        <p>
+          The Savannah River Site is a large federal facility operated by the U.S. Department of Energy. Originally built during
+          the Cold War, SRS focuses on nuclear materials management, environmental cleanup, and national security missions. While
+          it is not a commercial power plant, it plays a critical role in nuclear research, waste management, and defense-related operations.
+        </p>
+      </article>
+
+      <!-- add more facilities here as needed -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        © Copyright 2026 Nuclear Energy South Carolina
+      </div>
+
+      <ul class="footer-links" aria-label="Explore">
+        <li><a href="index.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="alternatives.html">Why Nuclear</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
