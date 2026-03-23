@@ -9,27 +9,27 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
+      <a class="brand" href="#about" aria-label="Nuclear Energy South Carolina home">
         <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
-      </div>
+      </a>
 
       <nav class="main-nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#locations">Locations</a>
-        <a href="#impacts">Impacts</a>
+        <a href="#about">Home</a>
         <a href="#why-nuclear">Why Nuclear?</a>
+        <a href="#learn-more">Learn More</a>
+        <a href="About.html">How It Works</a>
       </nav>
 
       <div class="cta">
-        <a class="btn btn-outline" href="#quiz">Take the Quiz</a>
+        <a class="btn btn-outline" href="About.html">How It Works</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
+    <section class="hero container" id="about">
       <div class="hero-content">
-        <h1>Powering Our State Today —<br /><span>Shaping Our Energy Future</span></h1>
+        <h1>Powering Our State Today — <span>Shaping Our Energy Future</span></h1>
         <p class="lead">
           South Carolina is one of the leading nuclear energy producers in the United States.
           Nuclear power plays a major role in providing reliable, affordable, and carbon-free electricity
@@ -38,18 +38,17 @@
         <p class="muted">
           This website explores how nuclear energy works, where South Carolina’s nuclear facilities are
           located, the impacts of nuclear power on our state, and how it compares to other energy sources.
-          You can even test your knowledge with our interactive quiz!
+          You can also explore the companion page that explains the science behind nuclear power generation.
         </p>
       </div>
 
-      <figure class="hero-image" aria-hidden="false">
-        <!-- Replace the src with your production hero image -->
+      <figure class="hero-image">
         <img src="images/plant.jpg" alt="Aerial view of a nuclear power plant" />
       </figure>
     </section>
 
     <section class="why container" id="why-nuclear" aria-labelledby="why-heading">
-      <h2 id="why-heading">Why Nuclear Matters</h2>
+      <h2 class="section-title" id="why-heading">Why Nuclear Matters</h2>
 
       <div class="card-grid">
         <article class="feature-card">
@@ -73,23 +72,37 @@
     </section>
 
     <section class="learn container" id="learn-more" aria-labelledby="learn-heading">
-      <h2 id="learn-heading">Learn More</h2>
+      <h2 class="section-title" id="learn-heading">Learn More</h2>
 
       <div class="learn-grid">
         <ul class="learn-list">
-          <li><strong>About Nuclear Energy</strong><br />Understand how nuclear fission produces electricity and how nuclear power plants operate safely.</li>
-          <li><strong>Facility Locations in South Carolina</strong><br />Explore where nuclear power plants and related facilities are located throughout the state.</li>
-          <li><strong>Environmental and Economic Impacts</strong><br />Learn how nuclear energy affects South Carolina’s environment, workforce, and communities.</li>
-          <li><strong>Comparisons to Other Energy Sources</strong><br />Test your knowledge about nuclear energy in South Carolina.</li>
-          <li><strong>Interactive Quiz</strong><br />Test your knowledge about nuclear energy in South Carolina.</li>
+          <li>
+            <strong>About Nuclear Energy</strong>
+            Understand how nuclear fission produces electricity and how nuclear power plants operate safely.
+          </li>
+          <li>
+            <strong>Facility Locations in South Carolina</strong>
+            Explore where nuclear power plants and related facilities are located throughout the state.
+          </li>
+          <li>
+            <strong>Environmental and Economic Impacts</strong>
+            Learn how nuclear energy affects South Carolina’s environment, workforce, and communities.
+          </li>
+          <li>
+            <strong>Comparisons to Other Energy Sources</strong>
+            See how nuclear energy compares with other major electricity sources.
+          </li>
+          <li>
+            <strong>Interactive Quiz</strong>
+            Test your knowledge about nuclear energy in South Carolina.
+          </li>
         </ul>
 
         <div class="learn-visual">
-          <!-- Replace the src with the on-site construction image -->
           <img src="images/assembly.jpg" alt="Construction or assembly at a nuclear facility" />
           <div class="learn-actions">
-            <a class="btn btn-primary" href="#learn-more">Learn More</a>
-            <a class="btn btn-outline" href="#quiz">Take the Quiz</a>
+            <a class="btn btn-primary" href="#why-nuclear">Why Nuclear?</a>
+            <a class="btn btn-outline" href="About.html">How It Works</a>
           </div>
         </div>
       </div>
@@ -103,10 +116,10 @@
       </div>
 
       <ul class="footer-links" aria-label="Explore">
-        <li><a href="#about">About</a></li>
-        <li><a href="#locations">Locations</a></li>
+        <li><a href="#about">Home</a></li>
         <li><a href="#why-nuclear">Why Nuclear?</a></li>
-        <li><a href="#impacts">Impacts</a></li>
+        <li><a href="#learn-more">Learn More</a></li>
+        <li><a href="About.html">How It Works</a></li>
       </ul>
     </div>
   </footer>
