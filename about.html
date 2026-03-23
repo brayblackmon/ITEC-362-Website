@@ -4,140 +4,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>How Nuclear Power Generation Works — Nuclear Energy SC</title>
-
-  <!-- Reuse the shared stylesheet -->
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Page-specific inline styles to recreate the Figma layout -->
-  <style>
-    /* Hero with large background image and centered overlay text */
-    .hero-visual {
-      position: relative;
-      min-height: 260px;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      margin-bottom: 18px;
-      border-bottom: 1px solid #eef2f7;
-    }
-    .hero-visual::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image: url('images/towers.jpg');
-      background-size: cover;
-      background-position: center;
-      filter: contrast(.9) brightness(.55);
-      z-index:0;
-      border-bottom: 1px solid #eef2f7;
-    }
-    .hero-visual .hero-inner{
-      position: relative;
-      z-index:1;
-      width:100%;
-      max-width:1100px;
-      margin:0 auto;
-      padding:48px 24px;
-      text-align:left;
-    }
-    .hero-visual h1{
-      font-size:36px;
-      margin:0 0 8px 0;
-      line-height:1.05;
-      color: #fff;
-    }
-    .hero-visual p.lead {
-      color: rgba(255,255,255,0.9);
-      max-width:62ch;
-      margin:0;
-    }
-
-    /* Content rows: two-column layout that alternates */
-    .content-row{
-      display:grid;
-      grid-template-columns: 1fr 420px;
-      gap: 28px;
-      align-items:start;
-      padding:40px 0;
-      border-bottom:1px solid #f1f5f9;
-    }
-    .content-row .text h2{
-      font-size:22px;
-      margin:0 0 12px 0;
-    }
-    .content-row .text p{ color:var(--muted); margin:0 0 12px 0; }
-    .content-row .text ul{ color:var(--muted); margin:10px 0 0 18px; }
-
-    /* Reverse the column order for alternating layout */
-    .content-row.reverse{ grid-template-columns: 420px 1fr; }
-    .content-row.reverse .image{ order: -1; }
-
-    /* Image styles inside right/left columns */
-    .image img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:10px;
-      box-shadow: var(--shadow);
-      object-fit:cover;
-    }
-
-    /* Smaller diagram style to match Figma's smaller inline diagram */
-    .diagram{
-      width:100%;
-      max-width:380px;
-      background:#fff;
-      padding:8px;
-      border-radius:8px;
-      box-shadow: var(--shadow);
-    }
-
-    /* Make the layout stack on small screens */
-    @media (max-width:1100px){
-      .content-row, .content-row.reverse {
-        grid-template-columns: 1fr;
-      }
-      .content-row.reverse .image{ order: 0; }
-      .hero-visual{ min-height:220px; }
-      .hero-visual .hero-inner{ padding:28px 18px; }
-    }
-
-    /* Slight spacing before footer */
-    .content-row:last-of-type{
-      border-bottom: none;
-      padding-bottom: 30px;
-    }
-
-  </style>
 </head>
 <body>
-  <!-- Header (shared styling) -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
+      <a class="brand" href="index.html" aria-label="Nuclear Energy South Carolina home">
         <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
-      </div>
+      </a>
 
       <nav class="main-nav" aria-label="Primary">
-        <a href="index.html">About</a>
-        <a href="index.html#locations">Locations</a>
-        <a href="index.html#impacts">Impacts</a>
+        <a href="index.html">Home</a>
         <a href="index.html#why-nuclear">Why Nuclear?</a>
+        <a href="index.html#learn-more">Learn More</a>
+        <a href="About.html">How It Works</a>
       </nav>
 
       <div class="cta">
-        <a class="btn btn-outline" href="#quiz">Take the Quiz</a>
+        <a class="btn btn-outline" href="index.html#learn-more">Back to Guide</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero-visual" aria-labelledby="hero-title">
       <div class="hero-inner">
         <h1 id="hero-title">How Nuclear Power Generation Works</h1>
         <p class="lead">Understanding the Science Behind South Carolina’s Nuclear Energy</p>
-        <p class="lead" style="margin-top:12px; font-size:15px; max-width:60ch; color:rgba(255,255,255,0.92);">
+        <p class="page-note">
           Nuclear energy provides more than half of South Carolina’s electricity. But how does it actually
           work? Nuclear power plants generate electricity using a process called nuclear fission, which
           releases energy from atoms.
@@ -145,10 +39,9 @@
       </div>
     </section>
 
-    <!-- Section: Nuclear Fission (text left, diagram right) -->
     <section class="container content-row" aria-labelledby="fission-heading">
       <div class="text">
-        <h2 id="fission-heading">Nuclear Fission: <br/>Splitting the Atom</h2>
+        <h2 id="fission-heading">Nuclear Fission: <br />Splitting the Atom</h2>
 
         <p>At the core of nuclear power generation is uranium, a naturally occurring element.</p>
 
@@ -169,12 +62,10 @@
       </div>
 
       <div class="image" role="img" aria-label="Diagram of nuclear fission">
-        <!-- small diagram placeholder -->
-        <img src="images/fission.png" alt="Diagram showing a neutron hitting an atom causing fission" class="diagram" />
+        <img src="images/fission.jpg" alt="Diagram showing a neutron hitting an atom causing fission" class="diagram" />
       </div>
     </section>
 
-    <!-- Section: The Nuclear Reactor (diagram left, text right) -->
     <section class="container content-row reverse" aria-labelledby="reactor-heading">
       <div class="image">
         <img src="images/reactor-diagram.png" alt="Schematic of a nuclear reactor" />
@@ -196,7 +87,6 @@
       </div>
     </section>
 
-    <!-- Section: Turning Heat Into Steam (text left, image right) -->
     <section class="container content-row" aria-labelledby="steam-heading">
       <div class="text">
         <h2 id="steam-heading">Turning Heat Into Steam</h2>
@@ -217,7 +107,6 @@
       </div>
     </section>
 
-    <!-- Section: Spinning the Turbine and Generator (image left, text right) -->
     <section class="container content-row reverse" aria-labelledby="turbine-heading">
       <div class="image">
         <img src="images/sc-coops.png" alt="Map of South Carolina electricity regions" />
@@ -238,7 +127,6 @@
       </div>
     </section>
 
-    <!-- Section: Cooling Systems (text left, image right) -->
     <section class="container content-row" aria-labelledby="cooling-heading">
       <div class="text">
         <h2 id="cooling-heading">Cooling Systems</h2>
@@ -258,7 +146,6 @@
         <img src="images/plant-landscape.jpg" alt="Nuclear plant cooling tower releasing steam" />
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -266,10 +153,10 @@
       <div>© Copyright 2026 Nuclear Energy South Carolina</div>
 
       <ul class="footer-links" aria-label="Explore">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#locations">Locations</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="index.html#why-nuclear">Why Nuclear?</a></li>
-        <li><a href="index.html#impacts">Impacts</a></li>
+        <li><a href="index.html#learn-more">Learn More</a></li>
+        <li><a href="About.html">How It Works</a></li>
       </ul>
     </div>
   </footer>
