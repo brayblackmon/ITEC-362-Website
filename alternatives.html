@@ -1,139 +1,218 @@
 <!doctype html>
 <html lang="en">
-<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Comparing Nuclear Power to Other Energy Sources</title>
-
+  <title>Comparing Nuclear Power to Other Energy Sources — Nuclear Energy South Carolina</title>
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    .hero-alt {
-      display: grid;
-      grid-template-columns: 1fr 520px;
-      gap: 40px;
-      align-items: start;
-      padding-top: 40px;
-      padding-bottom: 40px;
+    .hero-alt{
+      display:grid;
+      gap:1.25rem;
+      align-items:center;
+      padding-block:2rem 1rem;
     }
 
-    .accent-divider {
-      height: 8px;
-      background: var(--accent);
-      border-radius: 6px;
-      margin: 26px 0;
+    .hero-alt h1{
+      margin:0 0 1rem;
+      font-size:clamp(2rem, 6vw, 4rem);
+      line-height:1.05;
+      letter-spacing:-0.03em;
     }
 
-    .balanced {
-      display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 28px;
-      align-items: start;
-      padding-bottom: 40px;
+    .hero-alt .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width:62ch;
     }
 
-    .pros-cons {
-      background: #f7fbff;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: var(--shadow);
-      font-size: 14px;
-      color: var(--neutral);
-      border: 1px solid rgba(11,75,122,0.06);
+    .hero-alt .hero-image img{
+      width:100%;
+      aspect-ratio:4 / 3;
+      object-fit:cover;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .pros-cons h4 { margin-top:0; }
-    .pros-cons ul {
-      padding-left: 18px;
-      margin: 8px 0 14px;
-      color: var(--muted);
+    .accent-divider{
+      height:6px;
+      width:100%;
+      background:var(--accent);
+      border-radius:999px;
+      margin:0;
     }
 
-    @media (max-width:1100px){
-      .hero-alt { grid-template-columns: 1fr; }
-      .balanced { grid-template-columns: 1fr; }
+    .comparison{
+      padding-block:2rem 3rem;
+    }
+
+    .comparison-grid{
+      display:grid;
+      gap:1.25rem;
+      align-items:start;
+    }
+
+    .comparison-text h2{
+      margin:0 0 1rem;
+      font-size:clamp(1.5rem, 3vw, 2rem);
+      line-height:1.15;
+      color:var(--neutral);
+    }
+
+    .comparison-text p{
+      margin:0 0 1rem;
+      color:var(--muted);
+    }
+
+    .comparison-text ul{
+      margin:.75rem 0 1rem 1.15rem;
+      padding:0;
+      color:var(--muted);
+    }
+
+    .comparison-text li + li{
+      margin-top:.35rem;
+    }
+
+    .pros-cons{
+      background:#f7fbff;
+      border-radius:var(--radius);
+      padding:1rem;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(11,75,122,0.06);
+    }
+
+    .pros-cons h4{
+      margin:0 0 .75rem;
+      font-size:1.15rem;
+      color:var(--neutral);
+    }
+
+    .pros-cons strong{
+      display:block;
+      margin:.85rem 0 .4rem;
+      color:var(--accent);
+    }
+
+    .pros-cons ul{
+      margin:.35rem 0 0 1.15rem;
+      padding:0;
+      color:var(--muted);
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      margin-top:1.25rem;
+    }
+
+    .hero-actions .btn{
+      color:var(--accent);
+      background:#fff;
+      border:1px solid rgba(0,51,102,.18);
+      box-shadow:none;
+    }
+
+    .hero-actions .btn-primary{
+      color:#fff;
+      background:var(--accent);
+      border-color:transparent;
+      box-shadow:var(--shadow);
+    }
+
+    @media (min-width:768px){
+      .hero-alt{
+        grid-template-columns:minmax(0, 1fr) minmax(280px, 520px);
+        padding-block:3rem 1.25rem;
+      }
+
+      .comparison-grid{
+        grid-template-columns:minmax(0, 1fr) minmax(280px, 320px);
+      }
     }
   </style>
 </head>
 <body>
-
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
+      <a class="brand" href="index.html" aria-label="Nuclear Energy South Carolina home">
         <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
-      </div>
+      </a>
 
-      <nav class="main-nav">
-        <a href="index.html#about">About</a>
-        <a href="index.html#locations">Locations</a>
-        <a href="index.html#impacts">Impacts</a>
-        <a href="index.html#why-nuclear">Why Nuclear?</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="locations.html">Locations</a>
+        <a href="impacts.html">Impacts</a>
+        <a href="alternatives.html">Alternatives</a>
       </nav>
 
       <div class="cta">
-        <a class="btn btn-outline" href="#">Take the Quiz</a>
+        <a class="btn btn-outline" href="#pros-cons">Quick Compare</a>
       </div>
     </div>
   </header>
 
   <main>
-
-    <!-- HERO SECTION -->
-    <section class="container hero-alt">
+    <section class="container hero-alt" aria-labelledby="alternatives-title">
       <div>
-        <h1>Comparing Nuclear Power to Other Energy Sources</h1>
+        <h1 id="alternatives-title">Comparing Nuclear Power to Other Energy Sources</h1>
         <p class="lead">
-          South Carolina relies on a mix of energy sources to power homes and businesses. 
-          While solar, natural gas, coal, and hydroelectric energy all contribute, nuclear energy 
+          South Carolina relies on a mix of energy sources to power homes and businesses.
+          While solar, natural gas, coal, and hydroelectric energy all contribute, nuclear energy
           provides several key advantages that make it a cornerstone of the state’s electricity system.
         </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pros-cons">View Pros and Cons</a>
+          <a class="btn" href="impacts.html">See Impacts</a>
+        </div>
       </div>
 
-      <!-- Replace this image path with your exported pie chart image -->
       <figure class="hero-image">
-        <img src="images/chart.png" 
-             alt="Chart showing net electricity generation by source"
-             width="100"
-             height="100" />
+        <img
+          src="images/chart.png"
+          alt="Chart showing net electricity generation by source"
+        />
       </figure>
     </section>
 
-    <div class="container">
+    <div class="container" aria-hidden="true">
       <div class="accent-divider"></div>
     </div>
 
-    <!-- BALANCED ENERGY SECTION -->
-    <section class="container">
-      <div class="balanced">
+    <section class="container comparison" id="pros-cons" aria-labelledby="balanced-heading">
+      <div class="comparison-grid">
+        <div class="comparison-text">
+          <h2 id="balanced-heading">A Balanced Energy Mix</h2>
 
-        <div>
-          <h2>A Balanced Energy Mix</h2>
-
-          <p class="muted">
+          <p>
             South Carolina benefits from using multiple energy sources. However, nuclear energy stands out because it combines:
           </p>
 
-          <ul class="muted">
+          <ul>
             <li>Reliable 24/7 power</li>
             <li>Low operational carbon emissions</li>
             <li>High energy output</li>
             <li>Strong economic support for communities</li>
           </ul>
 
-          <p class="muted">
+          <p>
             Together, these strengths make nuclear energy a vital part of South Carolina’s present and future energy strategy.
           </p>
 
-          <p class="muted">
+          <p>
             <em>
               Explore the rest of the site to learn more about how nuclear power works and where it operates across the state.
             </em>
           </p>
         </div>
 
-        <aside class="pros-cons">
-          <h4>Pros and Cons of Nuclear Energy</h4>
+        <aside class="pros-cons" aria-labelledby="pros-cons-heading">
+          <h4 id="pros-cons-heading">Pros and Cons of Nuclear Energy</h4>
 
           <strong>Pros</strong>
           <ul>
@@ -150,26 +229,22 @@
             <li>Long decommissioning timelines</li>
           </ul>
         </aside>
-
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>
-        © Copyright 2026 Nuclear Energy South Carolina
-      </div>
+      <div>© Copyright 2026 Nuclear Energy South Carolina</div>
 
-      <ul class="footer-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#locations">Locations</a></li>
-        <li><a href="index.html#why-nuclear">Why Nuclear?</a></li>
-        <li><a href="index.html#impacts">Impacts</a></li>
+      <ul class="footer-links" aria-label="Explore">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="alternatives.html">Alternatives</a></li>
       </ul>
     </div>
   </footer>
-
 </body>
 </html>

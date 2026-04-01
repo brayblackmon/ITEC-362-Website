@@ -4,193 +4,279 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Impacts of Nuclear Energy — Nuclear Energy South Carolina</title>
-
-  <!-- Reuse the shared stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Page-specific inline styles -->
   <style>
-    /* Hero with large background image and overlay text (matches other pages') */
-    .hero-visual {
-      position: relative;
-      min-height: 240px;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      margin-bottom: 22px;
-      border-bottom: 1px solid #eef2f7;
+    .hero-visual{
+      position:relative;
+      min-height:240px;
+      display:flex;
+      align-items:flex-end;
+      color:#fff;
+      border-bottom:1px solid #eef2f7;
+      overflow:hidden;
     }
+
     .hero-visual::before{
       content:"";
       position:absolute;
       inset:0;
-      background-image: url('images/impacts-hero.jpg');
-      background-size: cover;
-      background-position: center;
-      filter: contrast(.9) brightness(.55);
-      z-index:0;
-    }
-    .hero-visual .hero-inner{
-      position: relative;
-      z-index:1;
-      width:100%;
-      max-width:1100px;
-      margin:0 auto;
-      padding:40px 24px;
-      text-align:left;
-    }
-    .hero-visual h1{
-      font-size:34px;
-      margin:0 0 8px 0;
-      line-height:1.05;
-      color: #fff;
-    }
-    .hero-visual p.lead {
-      color: rgba(255,255,255,0.92);
-      max-width:66ch;
-      margin:0;
+      background:url("images/impacts-hero.jpg") center/cover no-repeat;
+      filter:brightness(.55) contrast(.95);
+      transform:scale(1.02);
     }
 
-    /* Cards row for Environmental Impacts */
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.34));
+    }
+
+    .hero-visual .hero-inner{
+      position:relative;
+      z-index:1;
+      width:min(var(--max-width), 100%);
+      margin:0 auto;
+      padding:2rem 1rem;
+    }
+
+    .hero-visual h1{
+      margin:0 0 .5rem;
+      font-size:clamp(2rem, 6vw, 3.25rem);
+      line-height:1.05;
+      letter-spacing:-0.03em;
+      color:#fff;
+    }
+
+    .hero-visual .lead,
+    .hero-visual .intro{
+      color:rgba(255,255,255,.92);
+      max-width:66ch;
+    }
+
+    .intro{
+      margin:0;
+      font-size:1rem;
+    }
+
+    .section-heading{
+      margin:0 0 1rem;
+      font-size:clamp(1.5rem, 3vw, 2rem);
+      line-height:1.15;
+      color:var(--neutral);
+    }
+
+    .impacts{
+      padding-block:2rem 1rem;
+    }
+
     .impacts-cards{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:20px;
-      margin:18px 0 36px;
-      align-items:start;
+      gap:1rem;
     }
+
     .impact-card{
-      background: #fff;
-      border-radius:12px;
+      background:#fff;
+      border-radius:var(--radius);
       overflow:hidden;
-      box-shadow: var(--shadow);
-      padding:0;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(229,231,235,.7);
       display:flex;
       flex-direction:column;
-      min-height:240px;
+      min-height:100%;
     }
+
     .impact-card img{
       width:100%;
-      height:140px;
+      aspect-ratio:16 / 9;
       object-fit:cover;
-      display:block;
     }
-    .impact-card .card-body{
-      padding:14px;
-      flex:1;
-    }
-    .impact-card h3{ margin:0 0 8px; font-size:16px; color:var(--neutral) }
-    .impact-card p{ margin:0; color:var(--muted); font-size:14px; line-height:1.5 }
 
-    /* Economic section layout (text left, image right) */
+    .card-body{
+      padding:1rem;
+    }
+
+    .impact-card h3{
+      margin:0 0 .45rem;
+      font-size:1.1rem;
+      line-height:1.25;
+    }
+
+    .impact-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
     .economic{
       display:grid;
-      grid-template-columns: 1fr 420px;
-      gap:28px;
-      align-items:center;
-      padding:26px 0 46px;
-      border-top:1px solid #f1f5f9;
+      gap:1.25rem;
+      padding-block:2rem 3rem;
+      border-top:1px solid #eef2f7;
+      align-items:start;
     }
-    .economic img{
+
+    .economic-text h2{
+      margin:0 0 1rem;
+      font-size:clamp(1.5rem, 3vw, 2rem);
+      line-height:1.15;
+      color:var(--neutral);
+    }
+
+    .economic-text h4{
+      margin:1rem 0 .35rem;
+      font-size:1.05rem;
+      line-height:1.2;
+      color:var(--neutral);
+    }
+
+    .economic-text p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .economic-image img{
       width:100%;
-      height:auto;
-      border-radius:10px;
-      box-shadow: var(--shadow);
+      aspect-ratio:4 / 3;
       object-fit:cover;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    /* Small responsive tweaks */
-    @media (max-width:1100px){
-      .impacts-cards{ grid-template-columns: 1fr; }
-      .economic{ grid-template-columns: 1fr; }
-      .hero-visual{ min-height:200px; }
-      .hero-visual .hero-inner{ padding:28px 18px; }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      margin-top:1.25rem;
     }
 
-    /* footer spacing */
-    .site-footer{ padding-top:28px; padding-bottom:28px; }
+    .hero-actions .btn{
+      color:var(--accent);
+      background:#fff;
+      border:1px solid rgba(0,51,102,.18);
+      box-shadow:none;
+    }
+
+    .hero-actions .btn-primary{
+      color:#fff;
+      background:var(--accent);
+      border-color:transparent;
+      box-shadow:var(--shadow);
+    }
+
+    @media (min-width:768px){
+      .hero-visual{
+        min-height:320px;
+      }
+
+      .hero-visual .hero-inner{
+        padding-block:3.5rem;
+      }
+
+      .impacts-cards{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+      }
+
+      .economic{
+        grid-template-columns:minmax(0, 1fr) minmax(280px, 420px);
+        align-items:center;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Header (shared) -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
-      </div>
+      <a class="brand" href="index.html" aria-label="Nuclear Energy South Carolina home">
+        <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
+      </a>
 
       <nav class="main-nav" aria-label="Primary">
-        <a href="index.html">About</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
         <a href="locations.html">Locations</a>
         <a href="impacts.html">Impacts</a>
-        <a href="alternatives.html">Why Nuclear?</a>
+        <a href="alternatives.html">Alternatives</a>
       </nav>
 
       <div class="cta">
-        <a class="btn btn-outline" href="#quiz">Take the Quiz</a>
+        <a class="btn btn-outline" href="alternatives.html">Compare Sources</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero-visual" aria-labelledby="impacts-title">
-      <div class="hero-inner container">
+      <div class="hero-inner">
         <h1 id="impacts-title">Impacts of Nuclear Energy</h1>
         <p class="lead">How Nuclear Power Affects Our Environment, Economy, and Communities</p>
-        <p style="margin-top:12px;color:rgba(255,255,255,0.9);max-width:66ch;">
+        <p class="intro" style="margin-top:12px;">
           Nuclear energy plays a major role in South Carolina’s daily life — from the electricity that powers homes
-          to the jobs that support families. Below we outline environmental benefits and considerations, economic impacts,
-          and community outcomes of nuclear facilities in the state.
+          to the jobs that support families. Below are the environmental benefits and considerations, along with the
+          economic and community impacts of nuclear facilities in the state.
         </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#environmental-heading">See Impacts</a>
+          <a class="btn" href="locations.html">View Locations</a>
+        </div>
       </div>
     </section>
 
-    <section class="container" aria-labelledby="environmental-heading">
-      <h2 id="environmental-heading" style="margin-bottom:12px;color:var(--neutral)">Environmental Impacts</h2>
+    <section class="container impacts" aria-labelledby="environmental-heading">
+      <h2 class="section-heading" id="environmental-heading">Environmental Impacts</h2>
 
       <div class="impacts-cards">
-        <div class="impact-card" role="article" aria-labelledby="card1-title">
+        <article class="impact-card" aria-labelledby="card1-title">
           <img src="images/smoke.jpg" alt="Steam plume from a plant illustrating low greenhouse gas emissions" />
           <div class="card-body">
             <h3 id="card1-title">Low Greenhouse Gas Emissions</h3>
-            <p>Nuclear power plants do not burn fossil fuels to generate electricity. As a result, they produce very low greenhouse gas emissions during operation.</p>
+            <p>
+              Nuclear power plants do not burn fossil fuels to generate electricity. As a result, they produce very
+              low greenhouse gas emissions during operation.
+            </p>
           </div>
-        </div>
+        </article>
 
-        <div class="impact-card" role="article" aria-labelledby="card2-title">
+        <article class="impact-card" aria-labelledby="card2-title">
           <img src="images/haze.png" alt="City skyline showing clean air benefits" />
           <div class="card-body">
             <h3 id="card2-title">Air Quality Benefits</h3>
-            <p>Because nuclear plants do not rely on combustion, they do not release air pollutants such as sulfur dioxide or nitrogen oxides that harm local air quality.</p>
+            <p>
+              Because nuclear plants do not rely on combustion, they do not release air pollutants such as sulfur
+              dioxide or nitrogen oxides that harm local air quality.
+            </p>
           </div>
-        </div>
+        </article>
 
-        <div class="impact-card" role="article" aria-labelledby="card3-title">
+        <article class="impact-card" aria-labelledby="card3-title">
           <img src="images/wastewater.png" alt="Wastewater treatment ponds illustrating water management" />
           <div class="card-body">
             <h3 id="card3-title">Waste and Water Management</h3>
-            <p>While nuclear energy produces minimal air pollution, it does generate radioactive waste that must be carefully stored and monitored. Plants also require water for cooling systems.</p>
+            <p>
+              While nuclear energy produces minimal air pollution, it does generate radioactive waste that must be
+              carefully stored and monitored. Plants also require water for cooling systems.
+            </p>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
     <section class="container economic" aria-labelledby="economic-heading">
       <div class="economic-text">
-        <h2 id="economic-heading" style="margin-top:0;color:var(--neutral)">Economic Impacts</h2>
+        <h2 id="economic-heading">Economic Impacts</h2>
 
-        <h4 style="margin-bottom:6px;">Job Creation</h4>
-        <p style="color:var(--muted);margin-top:0;">
+        <h4>Job Creation</h4>
+        <p>
           Nuclear facilities provide thousands of high-skilled jobs in South Carolina. Positions include engineers,
-          reactor operators, maintenance technicians, safety specialists, and security personnel. These careers often offer
-          competitive salaries and long-term stability.
+          reactor operators, maintenance technicians, safety specialists, and security personnel. These careers often
+          offer competitive salaries and long-term stability.
         </p>
 
-        <h4 style="margin-top:14px;margin-bottom:6px;">Local Tax Revenue</h4>
-        <p style="color:var(--muted);">
-          Nuclear plants contribute substantial property taxes to their counties. This revenue helps fund schools, infrastructure
-          projects, public safety services, and other community programs.
+        <h4>Local Tax Revenue</h4>
+        <p style="margin-top:.9rem;">
+          Nuclear plants contribute substantial property taxes to their counties. This revenue helps fund schools,
+          infrastructure projects, public safety services, and other community programs.
         </p>
       </div>
 
@@ -205,10 +291,11 @@
       <div>© Copyright 2026 Nuclear Energy South Carolina</div>
 
       <ul class="footer-links" aria-label="Explore">
-        <li><a href="index.html">Explore</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="locations.html">Locations</a></li>
-        <li><a href="alternatives.html">Why Nuclear</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="alternatives.html">Alternatives</a></li>
       </ul>
     </div>
   </footer>
