@@ -6,183 +6,7 @@
   <title>Impacts of Nuclear Energy — Nuclear Energy South Carolina</title>
   <link rel="stylesheet" href="styles.css" />
 
-  <style>
-    .hero-visual{
-      position:relative;
-      min-height:240px;
-      display:flex;
-      align-items:flex-end;
-      color:#fff;
-      border-bottom:1px solid #eef2f7;
-      overflow:hidden;
-    }
-
-    .hero-visual::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url("images/impacts-hero.jpg") center/cover no-repeat;
-      filter:brightness(.55) contrast(.95);
-      transform:scale(1.02);
-    }
-
-    .hero-visual::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.34));
-    }
-
-    .hero-visual .hero-inner{
-      position:relative;
-      z-index:1;
-      width:min(var(--max-width), 100%);
-      margin:0 auto;
-      padding:2rem 1rem;
-    }
-
-    .hero-visual h1{
-      margin:0 0 .5rem;
-      font-size:clamp(2rem, 6vw, 3.25rem);
-      line-height:1.05;
-      letter-spacing:-0.03em;
-      color:#fff;
-    }
-
-    .hero-visual .lead,
-    .hero-visual .intro{
-      color:rgba(255,255,255,.92);
-      max-width:66ch;
-    }
-
-    .intro{
-      margin:0;
-      font-size:1rem;
-    }
-
-    .section-heading{
-      margin:0 0 1rem;
-      font-size:clamp(1.5rem, 3vw, 2rem);
-      line-height:1.15;
-      color:var(--neutral);
-    }
-
-    .impacts{
-      padding-block:2rem 1rem;
-    }
-
-    .impacts-cards{
-      display:grid;
-      gap:1rem;
-    }
-
-    .impact-card{
-      background:#fff;
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(229,231,235,.7);
-      display:flex;
-      flex-direction:column;
-      min-height:100%;
-    }
-
-    .impact-card img{
-      width:100%;
-      aspect-ratio:16 / 9;
-      object-fit:cover;
-    }
-
-    .card-body{
-      padding:1rem;
-    }
-
-    .impact-card h3{
-      margin:0 0 .45rem;
-      font-size:1.1rem;
-      line-height:1.25;
-    }
-
-    .impact-card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .economic{
-      display:grid;
-      gap:1.25rem;
-      padding-block:2rem 3rem;
-      border-top:1px solid #eef2f7;
-      align-items:start;
-    }
-
-    .economic-text h2{
-      margin:0 0 1rem;
-      font-size:clamp(1.5rem, 3vw, 2rem);
-      line-height:1.15;
-      color:var(--neutral);
-    }
-
-    .economic-text h4{
-      margin:1rem 0 .35rem;
-      font-size:1.05rem;
-      line-height:1.2;
-      color:var(--neutral);
-    }
-
-    .economic-text p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .economic-image img{
-      width:100%;
-      aspect-ratio:4 / 3;
-      object-fit:cover;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      margin-top:1.25rem;
-    }
-
-    .hero-actions .btn{
-      color:var(--accent);
-      background:#fff;
-      border:1px solid rgba(0,51,102,.18);
-      box-shadow:none;
-    }
-
-    .hero-actions .btn-primary{
-      color:#fff;
-      background:var(--accent);
-      border-color:transparent;
-      box-shadow:var(--shadow);
-    }
-
-    @media (min-width:768px){
-      .hero-visual{
-        min-height:320px;
-      }
-
-      .hero-visual .hero-inner{
-        padding-block:3.5rem;
-      }
-
-      .impacts-cards{
-        grid-template-columns:repeat(3, minmax(0, 1fr));
-      }
-
-      .economic{
-        grid-template-columns:minmax(0, 1fr) minmax(280px, 420px);
-        align-items:center;
-      }
-    }
-  </style>
+  
 </head>
 <body>
   <header class="site-header">
@@ -191,16 +15,20 @@
         <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
       </a>
 
-      <nav class="main-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="locations.html">Locations</a>
-        <a href="impacts.html">Impacts</a>
-        <a href="alternatives.html">Alternatives</a>
-      </nav>
+      <nav class="main-nav">
+<button class="nav-toggle" onclick="toggleMenu()">☰</button>
+<ul id="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="alternatives.html">Alternatives</a></li>
+<li><a href="impacts.html">Impacts</a></li>
+<li><a href="locations.html">Map</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+</ul>
+</nav>
 
       <div class="cta">
-        <a class="btn btn-outline" href="alternatives.html">Compare Sources</a>
+        
       </div>
     </div>
   </header>
@@ -299,5 +127,18 @@
       </ul>
     </div>
   </footer>
+
+<script>
+(function() {
+  var links = document.querySelectorAll(".main-nav a");
+  var path = window.location.pathname.split("/").pop();
+  links.forEach(function(link) {
+    if (link.getAttribute("href") === path) {
+      link.classList.add("active");
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

@@ -6,118 +6,7 @@
   <title>Locations — Nuclear Energy South Carolina</title>
   <link rel="stylesheet" href="styles.css" />
 
-  <style>
-    .locations-hero{
-      padding-block:2rem 1rem;
-    }
-
-    .locations-hero h1{
-      margin:0 0 .75rem;
-      font-size:clamp(2rem, 6vw, 3.25rem);
-      line-height:1.05;
-      letter-spacing:-0.03em;
-    }
-
-    .locations-hero p{
-      margin:0;
-      color:var(--muted);
-      max-width:68ch;
-      font-size:1.05rem;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.75rem;
-      margin-top:1.25rem;
-    }
-
-    .hero-actions .btn{
-      color:var(--accent);
-      background:#fff;
-      border:1px solid rgba(0,51,102,.18);
-      box-shadow:none;
-    }
-
-    .hero-actions .btn-primary{
-      color:#fff;
-      background:var(--accent);
-      border-color:transparent;
-      box-shadow:var(--shadow);
-    }
-
-    .map-wrap{
-      margin-top:1.5rem;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:#fff;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .map-wrap img{
-      width:100%;
-      aspect-ratio:16 / 10;
-      object-fit:cover;
-    }
-
-    .facilities{
-      padding-block:1rem 3rem;
-    }
-
-    .facilities h2{
-      margin:0 0 1rem;
-      font-size:clamp(1.5rem, 3vw, 2rem);
-      line-height:1.15;
-    }
-
-    .facility-list{
-      display:grid;
-      gap:1rem;
-    }
-
-    .facility{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:1rem;
-      box-shadow:var(--shadow);
-      border-left:4px solid var(--accent);
-    }
-
-    .facility h3{
-      margin:0 0 .35rem;
-      font-size:1.15rem;
-      line-height:1.2;
-    }
-
-    .facility .county{
-      margin:0 0 .75rem;
-      font-weight:700;
-      color:var(--accent);
-      font-size:.95rem;
-    }
-
-    .facility p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    @media (min-width:768px){
-      .locations-hero{
-        padding-block:3rem 1.25rem;
-      }
-
-      .facility-list{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width:1024px){
-      .facility-list{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-      }
-    }
-  </style>
+  
 </head>
 <body>
   <header class="site-header">
@@ -126,16 +15,20 @@
         <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
       </a>
 
-      <nav class="main-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="locations.html">Locations</a>
-        <a href="impacts.html">Impacts</a>
-        <a href="alternatives.html">Alternatives</a>
-      </nav>
+      <nav class="main-nav">
+<button class="nav-toggle" onclick="toggleMenu()">☰</button>
+<ul id="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="alternatives.html">Alternatives</a></li>
+<li><a href="impacts.html">Impacts</a></li>
+<li><a href="locations.html">Map</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+</ul>
+</nav>
 
       <div class="cta">
-        <a class="btn btn-outline" href="#facilities">Explore Sites</a>
+        
       </div>
     </div>
   </header>
@@ -222,5 +115,18 @@
       </ul>
     </div>
   </footer>
+
+<script>
+(function() {
+  var links = document.querySelectorAll(".main-nav a");
+  var path = window.location.pathname.split("/").pop();
+  links.forEach(function(link) {
+    if (link.getAttribute("href") === path) {
+      link.classList.add("active");
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nuclear Energy in South Carolina Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Nuclear Energy South Carolina home">
+        <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
+      </a>
+
+      <nav class="main-nav">
+<button class="nav-toggle" onclick="toggleMenu()">☰</button>
+<ul id="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="alternatives.html">Alternatives</a></li>
+<li><a href="impacts.html">Impacts</a></li>
+<li><a href="locations.html">Map</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+</ul>
+</nav>
+
+      <div class="cta">
+        
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero-quiz" aria-labelledby="quiz-title">
+      <div>
+        <h1 id="quiz-title">Nuclear Energy in South Carolina Quiz</h1>
+        <p class="eyebrow">Test Your Knowledge!</p>
+        <p>
+          Think you understand how nuclear energy powers South Carolina? Take this quiz to find out!
+          Choose the best answer for each question.
+        </p>
+      </div>
+
+      <figure class="hero-image">
+        <img src="images/stacks.jpg" alt="Aerial view of a nuclear power plant with cooling towers" />
+      </figure>
+    </section>
+
+    <div class="container" aria-hidden="true">
+      <div class="divider"></div>
+    </div>
+
+    <section class="container quiz-shell" aria-labelledby="questions-heading">
+      <h2 id="questions-heading" class="section-title">Quiz Questions</h2>
+
+      <div id="error-banner" class="error-banner" role="alert" aria-live="polite"></div>
+
+      <form id="quiz-form" class="quiz-form" novalidate>
+        <fieldset class="question-card" data-answer="B">
+          <legend class="question-title"><span class="diamond">◆</span> Question 1</legend>
+          <p class="question-text">What process is used in nuclear power plants to generate heat?</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q1" value="A" /> <span>A. Nuclear fusion</span></label>
+            <label class="option"><input type="radio" name="q1" value="B" /> <span>B. Nuclear fission</span></label>
+            <label class="option"><input type="radio" name="q1" value="C" /> <span>C. Combustion</span></label>
+            <label class="option"><input type="radio" name="q1" value="D" /> <span>D. Solar radiation</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-card" data-answer="C">
+          <legend class="question-title"><span class="diamond">◆</span> Question 2</legend>
+          <p class="question-text">Approximately how much of South Carolina’s electricity is nuclear powered?</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q2" value="A" /> <span>A. Less than 10%</span></label>
+            <label class="option"><input type="radio" name="q2" value="B" /> <span>B. About 25%</span></label>
+            <label class="option"><input type="radio" name="q2" value="C" /> <span>C. More than 50%</span></label>
+            <label class="option"><input type="radio" name="q2" value="D" /> <span>D. Nearly 100%</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-card" data-answer="A">
+          <legend class="question-title"><span class="diamond">◆</span> Question 3</legend>
+          <p class="question-text">Which of the following is a nuclear power plant located in South Carolina?</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q3" value="A" /> <span>A. Oconee Nuclear Station</span></label>
+            <label class="option"><input type="radio" name="q3" value="B" /> <span>B. Three Mile Island</span></label>
+            <label class="option"><input type="radio" name="q3" value="C" /> <span>C. Palo Verde</span></label>
+            <label class="option"><input type="radio" name="q3" value="D" /> <span>D. Diablo Canyon</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-card" data-answer="B">
+          <legend class="question-title"><span class="diamond">◆</span> Question 4</legend>
+          <p class="question-text">Why are many nuclear power plants located near large bodies of water?</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q4" value="A" /> <span>A. For transportation of fuel by boat</span></label>
+            <label class="option"><input type="radio" name="q4" value="B" /> <span>B. For cooling purposes</span></label>
+            <label class="option"><input type="radio" name="q4" value="C" /> <span>C. To generate hydroelectric power</span></label>
+            <label class="option"><input type="radio" name="q4" value="D" /> <span>D. For recreational use</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-card" data-answer="C">
+          <legend class="question-title"><span class="diamond">◆</span> Question 5</legend>
+          <p class="question-text">What visible substance is released from nuclear plant cooling towers?</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q5" value="A" /> <span>A. Smoke</span></label>
+            <label class="option"><input type="radio" name="q5" value="B" /> <span>B. Carbon dioxide</span></label>
+            <label class="option"><input type="radio" name="q5" value="C" /> <span>C. Water vapor (steam)</span></label>
+            <label class="option"><input type="radio" name="q5" value="D" /> <span>D. Radiation</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-card" data-answer="C">
+          <legend class="question-title"><span class="diamond">◆</span> Question 6</legend>
+          <p class="question-text">Which federal agency regulates nuclear power plants in the United States?</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q6" value="A" /> <span>A. Department of Transportation (DOT)</span></label>
+            <label class="option"><input type="radio" name="q6" value="B" /> <span>B. Environmental Protection Agency (EPA)</span></label>
+            <label class="option"><input type="radio" name="q6" value="C" /> <span>C. Nuclear Regulatory Commission (NRC)</span></label>
+            <label class="option"><input type="radio" name="q6" value="D" /> <span>D. Department of Education (DOE)</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question-card" data-answer="C">
+          <legend class="question-title"><span class="diamond">◆</span> Question 7</legend>
+          <p class="question-text">One economic benefit of nuclear power plants in South Carolina is:</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q7" value="A" /> <span>A. Free electricity for nearby residents</span></label>
+            <label class="option"><input type="radio" name="q7" value="B" /> <span>B. Increased tourism only</span></label>
+            <label class="option"><input type="radio" name="q7" value="C" /> <span>C. Job creation and local tax revenue</span></label>
+            <label class="option"><input type="radio" name="q7" value="D" /> <span>D. Elimination of all other energy sources</span></label>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Submit Quiz</button>
+          <button class="btn" type="reset">Clear Answers</button>
+        </div>
+      </form>
+
+      <section id="results" class="result-panel" aria-live="polite" aria-atomic="true">
+        <div class="result-grid">
+          <div class="result-copy">
+            <h2>Final Score: <span id="score-value">0/7</span></h2>
+            <p id="result-message" class="score-line">Answer all questions to see your score.</p>
+            <p id="result-detail">Your score will appear here after you submit the quiz.</p>
+            <button class="certificate-btn" type="button" aria-label="Download Certificate button. Decorative only.">
+              Download Certificate
+            </button>
+          </div>
+
+          <div class="result-image">
+            <img src="images/cooling.jpg" alt="Cooling towers releasing steam against a blue sky" />
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© Copyright 2026 Nuclear Energy South Carolina</div>
+
+      <ul class="footer-links" aria-label="Explore">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="alternatives.html">Alternatives</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById('quiz-form');
+      const results = document.getElementById('results');
+      const scoreValue = document.getElementById('score-value');
+      const resultMessage = document.getElementById('result-message');
+      const resultDetail = document.getElementById('result-detail');
+      const errorBanner = document.getElementById('error-banner');
+      const questionCards = Array.from(document.querySelectorAll('.question-card'));
+
+      function updateSelectedStyles() {
+        document.querySelectorAll('.option').forEach((label) => {
+          const input = label.querySelector('input[type="radio"]');
+          label.classList.toggle('is-selected', Boolean(input && input.checked));
+        });
+      }
+
+      function validateForm() {
+        const missing = questionCards
+          .map((card, index) => {
+            const name = card.querySelector('input[type="radio"]')?.name;
+            const checked = name ? form.querySelector(`input[name="${name}"]:checked`) : null;
+            return checked ? null : index + 1;
+          })
+          .filter(Boolean);
+
+        if (missing.length) {
+          errorBanner.textContent = `Please answer Question ${missing[0]} before submitting.`;
+          errorBanner.classList.add('is-visible');
+          results.classList.remove('is-visible');
+          return false;
+        }
+
+        errorBanner.textContent = '';
+        errorBanner.classList.remove('is-visible');
+        return true;
+      }
+
+      function gradeQuiz() {
+        let score = 0;
+
+        questionCards.forEach((card) => {
+          const correctAnswer = card.dataset.answer;
+          const checked = card.querySelector('input[type="radio"]:checked');
+          if (checked && checked.value === correctAnswer) {
+            score += 1;
+          }
+        });
+
+        return score;
+      }
+
+      form.addEventListener('change', updateSelectedStyles);
+
+      form.addEventListener('reset', () => {
+        window.setTimeout(() => {
+          updateSelectedStyles();
+          results.classList.remove('is-visible');
+          errorBanner.textContent = '';
+          errorBanner.classList.remove('is-visible');
+          scoreValue.textContent = '0/7';
+          resultMessage.textContent = 'Answer all questions to see your score.';
+          resultDetail.textContent = 'Your score will appear here after you submit the quiz.';
+        }, 0);
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (!validateForm()) {
+          return;
+        }
+
+        const score = gradeQuiz();
+        const total = questionCards.length;
+        const percentage = Math.round((score / total) * 100);
+
+        scoreValue.textContent = `${score}/${total}`;
+        results.classList.add('is-visible');
+        results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        if (score === total) {
+          resultMessage.textContent = 'Perfect score! Nuclear Energy Expert!';
+          resultDetail.textContent = 'Great work — your knowledge of how nuclear power supports South Carolina is spot on.';
+        } else if (score >= total - 1) {
+          resultMessage.textContent = 'Excellent work!';
+          resultDetail.textContent = `You scored ${percentage}%. Review the questions you missed and try again.`;
+        } else if (score >= Math.ceil(total / 2)) {
+          resultMessage.textContent = 'Nice job!';
+          resultDetail.textContent = `You scored ${percentage}%. You are on the right track — try another round to improve.`;
+        } else {
+          resultMessage.textContent = 'Keep going!';
+          resultDetail.textContent = `You scored ${percentage}%. Revisit the About, Locations, and Impacts pages to sharpen your answers.`;
+        }
+      });
+
+      updateSelectedStyles();
+    })();
+  </script>
+
+<script>
+(function() {
+  var links = document.querySelectorAll(".main-nav a");
+  var path = window.location.pathname.split("/").pop();
+  links.forEach(function(link) {
+    if (link.getAttribute("href") === path) {
+      link.classList.add("active");
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

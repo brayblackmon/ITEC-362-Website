@@ -13,13 +13,17 @@
         <img src="images/sc.png" alt="Nuclear Energy South Carolina logo" class="logo" />
       </a>
 
-      <nav class="main-nav" aria-label="Primary">
-        <a href="#about">Home</a>
-        <a href="about.html">About</a>
-        <a href="locations.html">Locations</a>
-        <a href="impacts.html">Impacts</a>
-        <a href="alternatives.html">Alternatives</a>
-      </nav>
+      <nav class="main-nav">
+<button class="nav-toggle" onclick="toggleMenu()">☰</button>
+<ul id="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="alternatives.html">Alternatives</a></li>
+<li><a href="impacts.html">Impacts</a></li>
+<li><a href="locations.html">Map</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+</ul>
+</nav>
     </div>
   </header>
 
@@ -157,5 +161,18 @@
       </ul>
     </div>
   </footer>
+
+<script>
+(function() {
+  var links = document.querySelectorAll(".main-nav a");
+  var path = window.location.pathname.split("/").pop();
+  links.forEach(function(link) {
+    if (link.getAttribute("href") === path) {
+      link.classList.add("active");
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
